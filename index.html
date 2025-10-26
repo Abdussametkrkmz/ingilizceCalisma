@@ -1,40 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Daily English Study</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B1 İngilizce Çalışma Uygulaması</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Daily English Study</h1>
-  </header>
 
-  <main>
-    <section id="lesson-section">
-      <h2>Today's Lesson</h2>
-      <div id="lesson-content"></div>
-      <button id="mark-done">Mark as Done ✅</button>
-    </section>
+    <header>
+        <h1>B1 İngilizce Çalışma Programı</h1>
+        <p>Dosyayı yükleyin ve çalışmaya başlayın.</p>
+    </header>
 
-    <section id="flashcard-section">
-      <h2>Flashcards</h2>
-      <div id="flashcard">
-        <p id="word"></p>
-        <p id="meaning"></p>
-        <p id="example"></p>
-      </div>
-      <button id="know-btn">I Know ✅</button>
-      <button id="dont-know-btn">I Don’t Know ❌</button>
-    </section>
+    <div id="file-upload-section">
+        <h2>1. Günlük Çalışma Dosyasını Yükle</h2>
+        <input type="file" id="programFile" accept=".txt">
+        <button onclick="loadFile()">Programı Yükle</button>
+    </div>
 
-    <section id="test-section">
-      <h2>Mini Test</h2>
-      <div id="test-content"></div>
-      <button id="submit-test">Submit</button>
-    </section>
-  </main>
+    <div id="content-area" style="display:none;">
+        <h2 id="day-title">YÜKLENEN PROGRAM BAŞLIĞI</h2>
+        
+        <section id="mini-quiz">
+            <h3>Mini Quiz</h3>
+            <div id="quiz-questions"></div>
+        </section>
 
-  <script src="app.js"></script>
+        <section id="flashcards">
+            <h3>Kelime Kartları (Flashcards)</h3>
+            <div id="flashcard-container"></div>
+        </section>
+        
+        <p class="instruction">Not: Bu uygulama, yüklediğiniz metin dosyasındaki [QUIZ] ve [FLASHCARDS] başlıklarını okuyarak çalışır.</p>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
