@@ -1,26 +1,106 @@
 body {
-  font-family: Arial, sans-serif;
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f4f9;
+    color: #333;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-header h1 {
-  text-align: center;
-  color: #2c3e50;
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
 }
 
-section {
-  margin-bottom: 40px;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+#file-upload-section {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    background-color: white;
 }
 
-button {
-  margin-top: 10px;
-  margin-right: 10px;
-  padding: 10px 20px;
-  font-size: 14px;
-  cursor: pointer;
+#content-area {
+    margin-top: 30px;
+}
+
+h2, h3 {
+    color: #007bff;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+/* Flashcard stilleri */
+#flashcard-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: flex-start;
+}
+
+.flashcard {
+    perspective: 1000px; /* 3D efekti için zorunlu */
+    width: 200px;
+    height: 140px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Kartın arkasını gizle */
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    background-color: #e6f2ff; /* Açık mavi arka plan */
+}
+
+/* Quiz stilleri */
+.quiz-item {
+    padding: 10px 0;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.quiz-item input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.result-span {
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.instruction {
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #666;
 }
